@@ -21,25 +21,23 @@
   --overlay-dark: rgba(10, 14, 26, 0.8);
 }
 
-body.landing {
+body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  min-height: 100vh;
-  margin: 0;
+  height: 100dvh;
+  margin: 0 auto;
 }
 
-.landing__main {
+.landing__header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  gap: 3rem;
-  padding: 2rem;
-}
+  gap: 2rem;
+  padding: 3rem;}
 
 .landing__info {
-  max-width: 540px;
+  max-width: 500px;
 }
 
 .landing__title {
@@ -50,10 +48,6 @@ body.landing {
 }
 .landing__title--white {
   color: var(--text-primary);
-}
-
-.landing__title--pink {
-  color: var(--accent-pink);
 }
 
 .title-gradient--blue {
@@ -72,13 +66,15 @@ body.landing {
 
 .landing__subtitle {
   color: var(--text-secondary);
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 2.5rem;
 }
 
 .form {
-  background: var(--bg-card);
+  background: var(--bg-secondary);
   border-radius: 1rem;
+  border: 1.5px solid #757575;
+
   box-shadow: 0 4px 32px rgba(0,0,0,0.18);
   padding: 2rem 1.5rem 1.2rem 1.5rem;
   display: flex;
@@ -101,8 +97,7 @@ body.landing {
 }
 .form__icon {
   margin-right: 0.7rem;
-  display: flex;
-  align-items: center;
+  flex-shrink: 0;
 }
 .form__input {
   background: transparent;
@@ -132,10 +127,6 @@ body.landing {
 .form__button:hover {
   background: var(--accent-purple);
 }
-.form__arrow {
-  margin-left: 0.5rem;
-  font-size: 1.2em;
-}
 .form__privacy {
   color: var(--accent-yellow);
   font-size: 0.95rem;
@@ -150,20 +141,43 @@ body.landing {
 }
 .book-card {
   position: relative;
-  background: var(--bg-card);
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
   padding: 2.5rem 2rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 320px;
 }
 .book-card__image {
   width: 220px;
   height: auto;
   border-radius: 0.7rem;
   box-shadow: 0 2px 16px rgba(76,111,255,0.12);
+  animation: floatUpDown 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.book-card__image:hover {
+  animation: floatSideToSide 0.5s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatSideToSide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
 }
 .book-card__badge {
   position: absolute;
@@ -180,6 +194,9 @@ body.landing {
   line-height: 1.2;
 }
 
+main{
+    padding: 0 2rem 4rem 2rem;
+}
 /* Beneficios Section */
 .benefits {
   width: 100%;
@@ -225,27 +242,28 @@ body.landing {
   color: var(--text-secondary);
   font-size: 1.05rem;
   margin-left: 0.7rem;
+  margin-bottom: 0;
 }
 .benefits__arrow {
   margin-left: auto;
   color: var(--text-secondary);
   font-size: 1.5rem;
 }
-.benefits__main {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
 .benefits__title {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1.2rem;
+  text-align: center;
+  width: 100%;
 }
 .benefits__subtitle {
   color: var(--text-secondary);
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
 }
 .benefits__subtitle a {
   color: var(--accent-blue);
@@ -276,11 +294,8 @@ body.landing {
   width: 48px;
   height: 48px;
   border-radius: 0.7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 1rem;
-  font-size: 2rem;
+  flex-shrink: 0;
 }
 .benefit-card__icon--blue {
   background: var(--accent-blue);
@@ -327,44 +342,35 @@ body.landing {
   gap: 1.2rem;
   width: 100%;
   max-width: 540px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: pdf-counter;
 }
 .pdf-content__item {
   background: var(--bg-secondary);
   border-radius: 0.7rem;
   border: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 3.5rem;
   font-size: 1.15rem;
   color: var(--text-primary);
   font-weight: 500;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  justify-content: space-between;
+  position: relative;
+  counter-increment: pdf-counter;
 }
-.pdf-content__number {
+.pdf-content__item::before {
+  content: "0" counter(pdf-counter);
+  position: absolute;
+  left: 1.5rem;
   color: var(--text-secondary);
   font-size: 1.1rem;
-  margin-right: 1.2rem;
   font-family: monospace;
-}
-.pdf-content__text {
-  flex: 1;
-}
-.pdf-content__arrow {
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-  margin-left: 1.2rem;
 }
 
 /* Sección: Conoce al autor */
 .author-card {
   width: 100%;
-  background: var(--bg-secondary);
-  padding: 3rem 0 2.5rem 0;
-  display: flex;
-  justify-content: center;
-}
-.author-card__container {
   background: var(--bg-card);
   border-radius: 1.2rem;
   box-shadow: 0 2px 16px rgba(0,0,0,0.10);
@@ -373,22 +379,14 @@ body.landing {
   gap: 2.5rem;
   align-items: center;
   max-width: 800px;
-  width: 100%;
+  margin: 3rem auto 2.5rem auto;
 }
 .author-card__image {
-  min-width: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.author-card__noimage {
   width: 140px;
   height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-secondary);
+  flex-shrink: 0;
   border-radius: 50%;
+  background: var(--bg-secondary);
   border: 2px solid #2d3344;
 }
 .author-card__info {
@@ -400,7 +398,7 @@ body.landing {
 .author-card__title {
   color: var(--text-primary);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 0.2rem;
 }
 .author-card__name {
@@ -422,9 +420,14 @@ body.landing {
   gap: 1.2rem;
   margin-top: 0.7rem;
 }
-.author-card__icon {
+.author-card__link {
   color: var(--text-secondary);
   font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.author-card__link:hover {
+  color: var(--accent-blue);
 }
 
 /* Footer */
@@ -433,20 +436,16 @@ body.landing {
   background: var(--bg-secondary);
   padding: 2.5rem 0 1.5rem 0;
   display: flex;
-  justify-content: center;
-}
-.main-footer__container {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .main-footer__copyright {
   color: var(--text-secondary);
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin: 0;
   text-align: center;
 }
 .main-footer__nav {

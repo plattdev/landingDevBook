@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +8,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="landing">
-    <main class="landing__main">
+<body>
+    <header class="landing__header">
         <section class="landing__info">
             <h1 class="landing__title">
                 <span class="landing__title--white">Deja de soñar.</span><br>
@@ -21,121 +19,92 @@
             <p class="landing__subtitle">
                 La guía definitiva escrita por <strong>Toni Ferrà</strong> para pasar de "no sé nada" a escribir tu primer software. Sin tecnicismos aburridos. Solo práctica.
             </p>
-            <form class="form form--card" autocomplete="off">
+            <form class="form" autocomplete="off">
+
                 <label for="email" class="form__label">¿A dónde te enviamos el PDF?</label>
                 <div class="form__input-group">
-                    <span class="form__icon">
-                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm6 6l6-4H6l6 4z" fill="#94a3b8"/></svg>
-                    </span>
+                    <svg class="form__icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm6 6l6-4H6l6 4z" fill="#94a3b8"/></svg>
                     <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" required>
                 </div>
-                <button type="submit" class="form__button">¡Quiero mi copia GRATIS! <span class="form__arrow">→</span></button>
+
+                <button type="submit" class="form__button">¡Quiero mi copia GRATIS! →</button>
+
                 <p class="form__privacy">Tus datos están 100% seguros. Cero spam.</p>
             </form>
         </section>
+
         <aside class="landing__book">
             <figure class="book-card">
-                <img src="img/book-cover.png" alt="Aprende a Programar - Toni Ferrà" class="book-card__image">
+                <img class="book-card__image" src="img/book-cover.avif" alt="Aprende a Programar - Toni Ferrà">
                 <figcaption class="book-card__badge">100%<br>GRATIS</figcaption>
             </figure>
         </aside>
-    </main>
+    </header>
 
-    <section class="benefits">
-        <div class="benefits__top">
-            <div class="benefits__avatars">
-                <img src="img/avatar1.png" alt="avatar" class="benefits__avatar">
-                <img src="img/avatar2.png" alt="avatar" class="benefits__avatar">
-                <img src="img/avatar3.png" alt="avatar" class="benefits__avatar">
-                <span class="benefits__count">+2k</span>
+    <main class="main">
+
+        <section class="benefits">
+            <div class="benefits__top">
+                <div class="benefits__avatars">
+                    <img src="img/avatar1.png" alt="Usuario satisfecho 1" class="benefits__avatar">
+                    <img src="img/avatar2.png" alt="Usuario satisfecho 2" class="benefits__avatar">
+                    <img src="img/avatar3.png" alt="Usuario satisfecho 3" class="benefits__avatar">
+                    <span class="benefits__count">+2k</span>
+                </div>
+                <p class="benefits__desc">Ya descargado por más de <strong>2,000 futuros devs.</strong></p>
+                <span class="benefits__arrow" aria-hidden="true">↓</span>
             </div>
-            <span class="benefits__desc">Ya descargado por más de <strong>2,000 futuros devs.</strong></span>
-            <span class="benefits__arrow">&#8595;</span>
-        </div>
-        <div class="benefits__main">
             <h2 class="benefits__title">No es otro libro aburrido de teoría</h2>
             <p class="benefits__subtitle">Diseñado para que entiendas <a href="#">el por qué</a> y no solo el cómo. Una metodología probada para perder el miedo al código.</p>
-        </div>
-        <div class="benefits__cards">
-            <article class="benefit-card">
-                <div class="benefit-card__icon benefit-card__icon--blue">
-                    <svg width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M8 10h12v8H8v-8zm2 2v4h8v-4h-8z" fill="#1a1f2e"/></svg>
-                </div>
-                <h3 class="benefit-card__title">Fundamentos Sólidos</h3>
-                <p class="benefit-card__desc">Olvídate de copiar y pegar. Entiende la lógica detrás de cada línea de código, desde variables hasta algoritmos complejos.</p>
-            </article>
-            <article class="benefit-card">
-                <div class="benefit-card__icon benefit-card__icon--purple">
-                    <svg width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M10 10h8v8h-8v-8zm2 2v4h4v-4h-4z" fill="#1a1f2e"/></svg>
-                </div>
-                <h3 class="benefit-card__title">De Cero a Datos</h3>
-                <p class="benefit-card__desc">Aprovechando la experiencia de Toni en Data, aprenderás cómo el código estructura y transforma la información moderna.</p>
-            </article>
-            <article class="benefit-card">
-                <div class="benefit-card__icon benefit-card__icon--pink">
-                    <svg width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M14 8l4 8h-8l4-8zm0 2v4" stroke="#1a1f2e" stroke-width="2" stroke-linecap="round"/></svg>
-                </div>
-                <h3 class="benefit-card__title">Proyectos Reales</h3>
-                <p class="benefit-card__desc">Nada de "Hola Mundo" y ya. Construirás pequeñas aplicaciones funcionales que podrás añadir a tu portafolio.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Sección: ¿Qué hay dentro del PDF? -->
-    <section class="pdf-content">
-        <h2 class="pdf-content__title">¿Qué hay dentro del PDF?</h2>
-        <div class="pdf-content__list">
-            <div class="pdf-content__item">
-                <span class="pdf-content__number">01</span>
-                <span class="pdf-content__text">La Mentalidad del Programador</span>
-                <span class="pdf-content__arrow">&#9660;</span>
+            <div class="benefits__cards">
+                <article class="benefit-card">
+                    <svg class="benefit-card__icon benefit-card__icon--blue" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M8 10h12v8H8v-8zm2 2v4h8v-4h-8z" fill="#1a1f2e"/></svg>
+                    <h3 class="benefit-card__title">Fundamentos Sólidos</h3>
+                    <p class="benefit-card__desc">Olvídate de copiar y pegar. Entiende la lógica detrás de cada línea de código, desde variables hasta algoritmos complejos.</p>
+                </article>
+                <article class="benefit-card">
+                    <svg class="benefit-card__icon benefit-card__icon--purple" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M10 10h8v8h-8v-8zm2 2v4h4v-4h-4z" fill="#1a1f2e"/></svg>
+                    <h3 class="benefit-card__title">De Cero a Datos</h3>
+                    <p class="benefit-card__desc">Aprovechando la experiencia de Toni en Data, aprenderás cómo el código estructura y transforma la información moderna.</p>
+                </article>
+                <article class="benefit-card">
+                    <svg class="benefit-card__icon benefit-card__icon--pink" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M14 8l4 8h-8l4-8zm0 2v4" stroke="#1a1f2e" stroke-width="2" stroke-linecap="round"/></svg>
+                    <h3 class="benefit-card__title">Proyectos Reales</h3>
+                    <p class="benefit-card__desc">Nada de "Hola Mundo" y ya. Construirás pequeñas aplicaciones funcionales que podrás añadir a tu portafolio.</p>
+                </article>
             </div>
-            <div class="pdf-content__item">
-                <span class="pdf-content__number">02</span>
-                <span class="pdf-content__text">Tu Primer Script en 10 Minutos</span>
-                <span class="pdf-content__arrow">&#9660;</span>
-            </div>
-            <div class="pdf-content__item">
-                <span class="pdf-content__number">03</span>
-                <span class="pdf-content__text">Variables, Bucles y Caos</span>
-                <span class="pdf-content__arrow">&#9660;</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección: Conoce al autor -->
-    <section class="author-card">
-        <div class="author-card__container">
-            <div class="author-card__image">
-                <div class="author-card__noimage">
-                    <svg width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="54" stroke="#2d3344" stroke-width="4"/><path d="M40 60a20 20 0 1 1 40 0 20 20 0 0 1-40 0zm20-12a12 12 0 1 0 0 24 12 12 0 0 0 0-24z" fill="#2d3344"/><text x="60" y="90" text-anchor="middle" fill="#2d3344" font-size="18">No image</text></svg>
-                </div>
-            </div>
+        </section>
+    
+        <section class="pdf-content">
+            <h2 class="pdf-content__title">¿Qué hay dentro del PDF?</h2>
+            <ol class="pdf-content__list">
+                <li class="pdf-content__item">La Mentalidad del Programador</li>
+                <li class="pdf-content__item">Tu Primer Script en 10 Minutos</li>
+                <li class="pdf-content__item">Variables, Bucles y Caos</li>
+            </ol>
+        </section>
+    
+        <section class="author-card">
+            <svg class="author-card__image" width="140" height="140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="70" cy="70" r="68" stroke="#2d3344" stroke-width="4"/><circle cx="70" cy="55" r="20" fill="#2d3344"/><path d="M40 110c0-16.569 13.431-30 30-30s30 13.431 30 30" fill="#2d3344"/></svg>
             <div class="author-card__info">
-                <h3 class="author-card__title">Conoce al autor: <span class="author-card__name">Toni Ferrà</span></h3>
+                <h2 class="author-card__title">Conoce al autor: <strong class="author-card__name">Toni Ferrà</strong></h2>
                 <p class="author-card__desc">Desarrollador apasionado y experto en el ecosistema Microsoft y Datos. Toni ha dedicado años a organizar comunidades tecnológicas y mentorear a nuevos talentos.</p>
                 <blockquote class="author-card__quote">"Escribí este libro porque creo que la programación es el superpoder del siglo XXI, y quiero que sea accesible para todos, sin barreras económicas."</blockquote>
-                <div class="author-card__links">
-                    <span class="author-card__icon">🌐</span>
-                    <span class="author-card__icon">&lt;/&gt;</span>
+                <div class="author-card__links" aria-label="Enlaces sociales">
+                    <a href="#" class="author-card__link" aria-label="Sitio web">🌐</a>
+                    <a href="#" class="author-card__link" aria-label="GitHub">&lt;/&gt;</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
+
     <footer class="main-footer">
-        <div class="main-footer__container">
-            <p class="main-footer__copyright">© 2025 Toni Ferrà. Todos los derechos reservados.</p>
-            <nav class="main-footer__nav">
-                <a href="#" class="main-footer__link">Política de Privacidad</a>
-                <a href="#" class="main-footer__link">Términos de Uso</a>
-            </nav>
-        </div>
+        <p class="main-footer__copyright">© 2025 Toni Ferrà. Todos los derechos reservados.</p>
+        <nav class="main-footer__nav" aria-label="Enlaces legales">
+            <a href="#" class="main-footer__link">Política de Privacidad</a>
+            <a href="#" class="main-footer__link">Términos de Uso</a>
+        </nav>
     </footer>
-
-    
-
-
 </body>
 </html>
