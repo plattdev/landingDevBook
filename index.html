@@ -19,16 +19,12 @@
             <p class="landing__subtitle">
                 La guía definitiva escrita por <strong>Toni Ferrà</strong> para pasar de "no sé nada" a escribir tu primer software. Sin tecnicismos aburridos. Solo práctica.
             </p>
-            <form class="form" autocomplete="off" method="post" netlify id="form1">
-                <input
-                name="email">
-                <input type="text" name="Nombre">
+            <form id="form1" autocomplete="off" class="form" method="post" netlify>
+                <label class="form__label">¿A dónde te enviamos el PDF?</label>
+                <input type="text" name="Nombre" placeholder="Tu nombre">
+                <input type="number" name="Edad " placeholder="Tu edad">
 
-                <label for="email" class="form__label">¿A dónde te enviamos el PDF?</label>
-                <div class="form__input-group">
-                    <svg class="form__icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm6 6l6-4H6l6 4z" fill="#94a3b8"/></svg>
-                    <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" required>
-                </div>
+                <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" required>
 
                 <button type="submit" class="form__button">¡Quiero mi copia GRATIS! →</button>
 
@@ -59,7 +55,8 @@
             </div>
             <h2 class="benefits__title">No es otro libro aburrido de teoría</h2>
             <p class="benefits__subtitle">Diseñado para que entiendas <a href="#">el por qué</a> y no solo el cómo. Una metodología probada para perder el miedo al código.</p>
-            <div class="benefits__cards">
+
+            <section class="benefits__cards">
                 <article class="benefit-card">
                     <svg class="benefit-card__icon benefit-card__icon--blue" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="28" height="28" rx="7" fill="currentColor"/><path d="M8 10h12v8H8v-8zm2 2v4h8v-4h-8z" fill="#1a1f2e"/></svg>
                     <h3 class="benefit-card__title">Fundamentos Sólidos</h3>
@@ -75,7 +72,7 @@
                     <h3 class="benefit-card__title">Proyectos Reales</h3>
                     <p class="benefit-card__desc">Nada de "Hola Mundo" y ya. Construirás pequeñas aplicaciones funcionales que podrás añadir a tu portafolio.</p>
                 </article>
-            </div>
+            </section>
         </section>
     
         <section class="pdf-content">
@@ -102,12 +99,12 @@
     </main>
 
 
-    <footer class="main-footer">
-        <p class="main-footer__copyright">© 2025 Toni Ferrà. Todos los derechos reservados.</p>
-        <nav class="main-footer__nav" aria-label="Enlaces legales">
-            <a href="#" class="main-footer__link">Política de Privacidad</a>
-            <a href="#" class="main-footer__link">Términos de Uso</a>
-        </nav>
+    <footer class="footer">
+        <p class="footer__copyright">© 2025 Toni Ferrà. Todos los derechos reservados.</p>
+        <p class="footer__nav" aria-label="Enlaces legales">
+            <a href="#" class="footer__link">Política de Privacidad</a>
+            <a href="#" class="footer__link">Términos de Uso</a>
+        </p>
     </footer>
 </body>
 </html>

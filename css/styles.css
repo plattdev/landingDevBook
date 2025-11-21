@@ -87,26 +87,15 @@ body {
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
-.form__input-group {
-  display: flex;
-  align-items: center;
-  background: var(--bg-secondary);
-  border-radius: 0.7rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border-subtle);
-}
-.form__icon {
-  margin-right: 0.7rem;
-  flex-shrink: 0;
-}
+
 .form__input {
-  background: transparent;
-  border: none;
-  outline: none;
+  background: var(--bg-primary);
+  border-radius: 0.7rem;
+  padding: 0.7rem ;
+  border: 1px solid var(--border-subtle);
+ 
   color: var(--text-primary);
   font-size: 1rem;
-  width: 100%;
-  padding: 0.5rem 0;
 }
 .form__input::placeholder {
   color: var(--text-secondary);
@@ -129,7 +118,7 @@ body {
 }
 .form__privacy {
   color: var(--accent-yellow);
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   text-align: left;
   margin-top: 0.2rem;
 }
@@ -204,11 +193,9 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 .benefits__top {
-  width: 100%;
-  max-width: 900px;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -217,16 +204,12 @@ main{
 .benefits__avatars {
   display: flex;
   align-items: center;
-  gap: -0.7rem;
 }
 .benefits__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 3px solid var(--bg-primary);
-  object-fit: cover;
-  margin-left: -12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 .benefits__count {
   background: var(--bg-secondary);
@@ -235,14 +218,11 @@ main{
   font-size: 1rem;
   border-radius: 50%;
   padding: 0.3rem 0.7rem;
-  margin-left: -12px;
   border: 3px solid var(--bg-primary);
 }
 .benefits__desc {
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  margin-left: 0.7rem;
-  margin-bottom: 0;
+  font-size: 1rem;
 }
 .benefits__arrow {
   margin-left: auto;
@@ -271,24 +251,27 @@ main{
   font-weight: 500;
 }
 .benefits__cards {
-  width: 100%;
-  max-width: 1600px;
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
 .benefit-card {
-  background: var(--bg-card);
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-  padding: 2.2rem 2rem 1.7rem 2rem;
-  flex: 1 1 0;
-  min-width: 320px;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    border-radius: 1.2rem;
+    padding: 2.2rem 2rem 1.7rem 2rem;   
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 1px solid var(--border-subtle);
+}
+/* Responsive: mostrar las tres cards una debajo de otra en móvil */
+@media (max-width: 600px) {
+  .benefits__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espacio entre cards */
+  }
+
 }
 .benefit-card__icon {
   width: 48px;
@@ -431,7 +414,7 @@ main{
 }
 
 /* Footer */
-.main-footer {
+.footer {
   width: 100%;
   background: var(--bg-secondary);
   padding: 2.5rem 0 1.5rem 0;
@@ -439,29 +422,43 @@ main{
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  max-width: 900px;
   margin: 0 auto;
 }
-.main-footer__copyright {
+.footer__copyright {
   color: var(--text-secondary);
   font-size: 1rem;
   margin: 0;
   text-align: center;
 }
-.main-footer__nav {
+.footer__nav {
   display: flex;
   gap: 2rem;
   justify-content: center;
 }
-.main-footer__link {
+.footer__link {
   color: var(--text-secondary);
   font-size: 1rem;
   text-decoration: none;
   transition: color 0.2s;
 }
-.main-footer__link:hover {
+.footer__link:hover {
   color: var(--accent-blue);
   text-decoration: underline;
 }
+
+/* Responsive: apila header en pantallas pequeñas */
+@media (max-width: 800px) {
+  .landing__header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .book-card__image {
+    width: 160px;
+  }
+}
+
 
 
